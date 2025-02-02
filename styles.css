@@ -1,0 +1,210 @@
+body{
+    padding: 8px;
+    background-color: #cfe7fd;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.container{
+    display: flex;
+    height: 98vh;
+}
+.shallow-info{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image:url("images/first-background.jpg") ;
+    background-repeat: no-repeat;
+    background-size:cover ;
+    color: white;
+    border-radius: 50px;
+    border: 3px solid white;
+    padding: 10px;
+}
+
+.input-group input{
+    border-radius: 10px;
+    border: none;
+    max-width: 60%;
+    width: 100%;
+    font-size: larger;
+    padding: 5px;
+    color: #0084ff;
+}
+.input-group button{
+    border-radius: 10px;
+    border: none;
+    font-size: larger;
+    padding: 5px;
+    color: #0084ff;
+}
+.unit-group{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.shallow-results {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.temp-shallow h2{
+    font-size: 50px;
+    padding: 0;
+}
+.temp-shallow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.temp-shallow img{
+    max-width: 50%;
+    width: 100%;
+}
+.time-of-sun{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 10px;
+}
+.time-of-sun img{
+    max-width: 15%;
+    width: 100%;
+}
+
+
+
+.all-info{
+    border: 2px solid white;
+    border-radius: 50px;
+    background-color: #70baff;
+    width: 80%;
+    padding: 25px;
+    color: white;
+    
+}
+.more-temp{
+    color: #0084ff;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: 30%;
+    border-radius: 50px;
+}
+.extra-info{
+    color: #0084ff;
+    background-color: white;
+    max-width: 210px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 50px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.extra-container{
+    display:flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px; /* Adjust width */
+    height: 14px; /* Smaller height for a thinner body */
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #bbb; /* Keep a neutral color */
+    transition: .4s;
+    border-radius: 20px;
+    transform: translateY(-50%); /* Centering the slider */
+}
+
+/* The circle */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px; /* Bigger than the body */
+    width: 18px; /* Same size as height to keep it round */
+    left: -2px; /* Make it slightly overflow */
+    bottom: 50%;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+    transform: translateY(50%); /* Centering the circle */
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2); /* Adds a shadow to emphasize the size */
+}
+
+/* No color change when toggled */
+input:checked + .slider {
+    background-color: #bbb; /* Same color as the default */
+}
+
+input:checked + .slider:before {
+    transform: translate(22px, 50%); /* Adjusted translation */
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+@media (max-width:912px) {
+    .container{
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .shallow-info{
+        width: 100%;
+    }
+    .all-info{
+        width: 100%;
+        height:fit-content;
+    }
+    .extra-info{
+        width: 80%;
+    }
+}
+
+@media (max-width:625px) {
+    .more-temp{
+        padding: 10px;
+        font-size:small;    
+    }
+}
+
+@media (max-width:406px) {
+    .shallow-info{
+        padding: 20px;
+        width: 400px;
+    }
+    .more-temp{
+        font-size:x-small;    
+    }
+    body{
+        padding: 20px;
+    }
+    .container{
+        justify-content: center;
+    }
+}
+
