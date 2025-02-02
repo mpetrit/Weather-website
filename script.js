@@ -24,21 +24,24 @@ let grndPressure=document.querySelector("#grnd-pressure")
 
 inputBtn.addEventListener("click",()=>{
     cityName=inputField.value;
-    displayWeather()
+    clearDisplay()
 })
 
 
 unitToggle.addEventListener("change",()=>{
     if(unitToggle.checked){
         weatherUnit="imperial"
-        displayWeather()
+        clearDisplay()
     }
     else{
         weatherUnit="metric"
-        displayWeather()
+        clearDisplay()
     }
 })
-
+function clearDisplay(){
+    shallowResults.innerHTML=""
+    displayWeather()
+}
 
 function displayWeather(){
     
@@ -47,12 +50,11 @@ function displayWeather(){
     .then((data)=>{
         console.log(data);
         //place country in the input field, check if u run it again
-        ((inputField.value).includes(regionNamesInEnglish.of(data.sys.country))==0)? inputField.value+=`, ${regionNamesInEnglish.of(data.sys.country)}`: 
+        ((inputField.value).includes(regionNamesInEnglish.of(data.sys.country))==0)? inputField.value+=`, ${regionNamesInEnglish.of(data.sys.country)}`: '';
         //alert("You are looking at the city already!")
 
         //shallow-results
-        shallowResults.innerHTML=""
-        let temp=document.createElement("h2")
+        let temp=document.createElement("h2");
         temp.textContent=Math.round(data.main.temp)+ ((weatherUnit=="metric")? " ᵒC":" ᵒF")
         let img=document.createElement("img")
         img.src=`http://openweathermap.org/img/wn/${data.weather[0].icon}.png`
