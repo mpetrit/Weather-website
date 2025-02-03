@@ -179,6 +179,7 @@ input:checked + .slider:before {
 @media (max-width:912px) {
     .container{
         flex-wrap: wrap;
+        height: auto;
         width: 100%;
     }
     .shallow-info{
